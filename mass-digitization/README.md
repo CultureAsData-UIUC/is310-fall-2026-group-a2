@@ -3,7 +3,7 @@
 **Course**: IS 310 — Culture As Data (Fall 2026)  
 **Group**: Group A2  
 **Semester Focus**: Music, Sound, and Audio Culture  
-**Contributors**: Min Kim ([@lunana-7](https://github.com/lunana-7)), and Group A2 Members  
+**Contributors**: Min Kim ([@lunana-7](https://github.com/lunana-7)), Darren Jin ([@ajjin513](https://github.com/ajjin513)), Rachel Tam ([@rtam721](https://github.com/rtam721)), Fianna Sullivan ([@fiannasullivan](https://github.com/fiannasullivan)), and Aoife  
 **Date**: September 8, 2026  
 
 ---
@@ -396,16 +396,17 @@ The three assigned readings and our hands-on explorations reveal that **Mass Dig
 
 ## Dividing Labor & Collaborative Git Logging
 
-In accordance with course guidelines, Group A2 divided project responsibilities equitably across all four research areas, utilizing GitHub commit logs to maintain transparent accountability:
+In accordance with course guidelines, Group A2 divided project responsibilities equitably across all five research areas, utilizing GitHub commit logs to maintain transparent accountability:
 
 ### Work Allocation Matrix
 
 | Group Member | Primary Responsibilities & Contributions | Git Log Verifiable Commit Scope |
 | :--- | :--- | :--- |
 | **Min Kim** ([@lunana-7](https://github.com/lunana-7)) | **Research Lead & Technical Architecture**: Project setup, root repository architecture, HathiTrust hands-on exploration (*The Crisis*, *Opportunity*, *Black Opals*), OCR error taxonomy, and Music digital object technical analysis. | Repository initialization, root `README.md`, HathiTrust query log, OCR documentation. |
-| **Group A2 Member 2** | **Archival & Rights Specialist**: Investigating HathiTrust access tiers, copyright cutoffs, download friction, and comparative analysis with Brewster Kahle’s "Universal Access to All Knowledge" philosophy. | Access and rights analysis, Kahle comparative synthesis, HathiTrust legal matrix. |
-| **Group A2 Member 3** | **Music & Sound Culture Specialist**: Investigation of audio digitization pipelines (ADC, IRENE optical laser scanning, OMR vs. OCR), born-digital DAW preservation, the Amen Break case study, and Indigenous sound refusal protocols. | Music digitization analysis, born-digital preservation paradox, sound refusal documentation. |
-| **Group A2 Member 4** | **Data Ethics & Synthesis Coordinator**: Deep-dive into *The Pudding* Lenna Image analysis, developing the tripartite synthesis (Mass Digitization / Documentation / Retirement), drafting key findings, and formulating class discussion questions. | Lenna case study, data retirement protocols, class presentation synthesis. |
+| **Darren Hong** ([@ajjin513](https://github.com/ajjin513)) | **Archival & Rights Specialist**: Investigating HathiTrust access tiers, copyright cutoffs, download friction, and comparative analysis with Brewster Kahle’s "Universal Access to All Knowledge" philosophy and streaming copyright enclosures. | Access and rights analysis, Kahle comparative synthesis, HathiTrust legal matrix, streaming licensing analysis. |
+| **Rachel Tam** ([@rtam721](https://github.com/rtam721)) | **Music Data & Metadata Specialist**: Investigation of audio digitization pipelines (ADC, IRENE optical laser scanning, OMR vs. OCR), born-digital DAW preservation, acoustic representations, and MusicBrainz / Linked Open Data standards. | Music digitization analysis, born-digital preservation paradox, audio representations, semantic metadata standards. |
+| **Fianna Sullivan** ([@fiannasullivan](https://github.com/fiannasullivan)) | **Synthesis & Discussion Coordinator**: Developing the overarching tripartite synthesis (Mass Digitization / Documentation / Retirement), drafting key findings, and formulating class discussion questions and tension points. | Tripartite synthesis framing, key findings & tensions, class discussion questions. |
+| **Aoife** (Contributor) | **Data Ethics & Cultural Curation Specialist**: Deep-dive into *The Pudding* Lenna Image analysis, data retirement principles, material periodical page context vs. structured datasets, and Indigenous sound refusal protocols (CARE principles & TK Labels). | Lenna case study, data retirement protocols, periodical contextual analysis, sound refusal & CARE principles. |
 
 ### Note on Collaborative Git Workflow
 All group members collaborated using branch-based development and pull requests to ensure that every member's labor, edits, and research contributions are preserved within the repository's permanent Git commit history.

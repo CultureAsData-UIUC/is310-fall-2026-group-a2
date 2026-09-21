@@ -27,10 +27,11 @@ Throughout this semester, Group A2 investigates how musical expression, recorded
 
 | Name | Role / Area of Contribution | GitHub Handle |
 | :--- | :--- | :--- |
-| **Min Kim** | Research Lead (HathiTrust & OCR Evaluation, Digital Audio Formats, Repository Setup) | [@lunana-7](https://github.com/lunana-7) |
-| *Group A2 Member* | Archival & Rights Specialist (HathiTrust Access, Proprietary vs. Free Archives, Lenna Case Study) | Contributor |
-| *Group A2 Member* | Music Data & Metadata Specialist (OMR vs. OCR, Born-Digital Audio, MusicBrainz, Sound Refusal) | Contributor |
-| *Group A2 Member* | Synthesis & Discussion Coordinator (Class Presentation, Key Findings & Tensions) | Contributor |
+| **Min Kim** | Research Lead & Technical Architecture (HathiTrust & OCR Evaluation, Digital Audio Formats, Repository Setup) | [@lunana-7](https://github.com/lunana-7) |
+| **Darren Jin** | Archival & Rights Specialist (HathiTrust Access, Kahle Universal Access, Streaming Licensing) | [@ajjin513](https://github.com/ajjin513) |
+| **Rachel Tam** | Music Data & Metadata Specialist (OMR vs. OCR, Born-Digital Audio, MusicBrainz, Sound Archives) | [@rtam721](https://github.com/rtam721) |
+| **Fianna Sullivan** | Synthesis & Discussion Coordinator (Tripartite Synthesis, Key Findings & Class Discussion Questions) | [@fiannasullivan](https://github.com/fiannasullivan) |
+| **Aoife** | Data Ethics & Cultural Curation Specialist (Lenna Case Study, Data Retirement Protocols, Sound Refusal & CARE Principles) | Contributor |
 
 ---
 
