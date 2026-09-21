@@ -9,9 +9,8 @@ Different digital platforms like TikTok, YouTube, and Spotify can also be explor
 **Individual Ideas: (Everyone)** <br>
 Min - Artist, music, and streaming data by platforms (TikTok, YouTube, Spotify, Apple Music, etc.) and regions (North America, Asia, Africa, etc.) <br>
 Hongju - Song Context before and after TikTok <br>
-- I will be digging into the topic how does a song’s original artistic and historical context its lyrical narrative, emotional weight, genre background, and artist intent get fragmented when filtered through short form algorithmic platforms like TikTok? <br>
-Before TikTok listeners consume full-length tracks within the broader framework of an album, an artist's personal discography, or a specific socio-cultural movement. <br><br>
-Meaning is derived primarily through close lyrical reading of the song writing.<br>
+I will be digging into the topic how does a song’s original artistic and historical context, its lyrical narrative get fragmented when filtered through short form algorithmic platforms like TikTok? <br>
+Before TikTok listeners consume full-length tracks within the broader framework of an album, an artist's personal discography, or a specific socio-cultural movement. Meaning is derived primarily through close lyrical reading of the song writing.<br> 
 Aoife - Billboard Top 100 over the years <br>
 Rachel - Collaborations between popular pop artists and artists from other genres (Spotify charts, MusicBrainz, Kaggle, and others) <br>
 Fianna - Jazz, its history, and how it came to be (including top jazz artists, bands, time periods, etc.)<br>
