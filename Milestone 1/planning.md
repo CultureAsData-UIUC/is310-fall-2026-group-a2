@@ -13,7 +13,7 @@ I will be digging into the topic how does a song’s original artistic and histo
 Before TikTok listeners consume full-length tracks within the broader framework of an album, an artist's personal discography, or a specific socio-cultural movement. Meaning is derived primarily through close lyrical reading of the song writing.<br> 
 Aoife - Billboard Top 100 over the years <br>
 Rachel - Collaborations between popular pop artists and artists from other genres (Spotify charts, MusicBrainz, Kaggle, and others) <br>
-Fianna - Jazz, its history, and how it came to be (including top jazz artists, bands, time periods, etc.)<br>
+Fianna - Jazz - Gentrification and Geography<br>
 Mazen - How fan communities affect artists and music culture <br><br>
 
 **We chose two scholarly sources to reinforce our topic research project.** <br>
@@ -29,6 +29,9 @@ Analyzes how a protest song’s original political meaning gets decontextualized
 
 https://archive.org/details/musicineverydayl0000deno/page/n8/mode/1up <br>
 This scholarly source asserts that music’s meaning isn't fixed to the song itself. It gets built and rebuilt depending on where and how people use it. The author backs this up with real-world studies, such as an aerobics class and karaoke nights. This connects directly to our group’s theme. DeNora’s aerobics and karaoke cases are examples of people using the same music differently for different bodily and emotional effects depending on the setting. <br><br>
+
+https://jazzmap.villagepreservation.org/ <br>
+An interactive map about the geography of where jazz lives, and how the geography can give us a picture into the gentrification of black neighborhoods throughout time. <br><br>
 
 **Collaboration Plan** <br>
 For our group, we have created a Discord group to communicate in. Through there, we’re able to share our progress, ask questions, communicate, and divide our work evenly. As for Github, we have a group repository and we plan on using it to store our work. We can organize by communicating on what each part should include and then uploading it once we’re content with it. While doing so, we’re able to check each other’s progress through our individual repositories. However, if there are any changes regarding how we’d like to organize our Github, we can always let each other know and come to a consensus. 
