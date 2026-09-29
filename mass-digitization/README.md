@@ -3,7 +3,7 @@
 **Course**: IS 310 — Culture As Data (Fall 2026)  
 **Group**: Group A2  
 **Semester Focus**: Music, Sound, and Audio Culture  
-**Contributors**: Min Kim ([@lunana-7](https://github.com/lunana-7)), Darren Jin ([@ajjin513](https://github.com/ajjin513)), Rachel Tam ([@rtam721](https://github.com/rtam721)), Fianna Sullivan ([@fiannasullivan](https://github.com/fiannasullivan)), and Aoife  
+**Contributors**: Min Kim ([@lunana-7](https://github.com/lunana-7)), Darren Jin ([@ajjin513](https://github.com/ajjin513)), Rachel Tam ([@rtam721](https://github.com/rtam721)), Fianna Sullivan ([@fiannasullivan](https://github.com/fiannasullivan)), Mazen Aleem ([@MazenAleem](https://github,com/MazenAleem)), and Aoife  
 **Date**: September 8, 2026  
 
 ---
