@@ -87,11 +87,12 @@ Barrett, Margaret. “‘Creative Collaboration’: An ‘Eminence’ Study of T
           pp. 195–218. EBSCOhost, https://doi.org/10.1177/0305735606061852.
 
     Barret's article explores how music composition can involve collaboration instead of just working alone. Through their research on a somposer-teacher and student-composer, they explain how working together by sharing ideas, problem solving, and supporting one another can be a part of the creative process, This relates tomy dataset because I'm looking into collaborations between pop artists and hip-hop/rap artists. Though they focus on teaching andf learning music composition instead of popular music collaborations, it helps understand how collaborations can involve different creative contribution and how they may not bw fully represented through artist credits.
-    
+
 Tyree, Tia C. M., and Christin Smith. “An Analysis of Women Rappers’ Lyrical and
           Video Performances in Hip Hop Collaborations.” Howard Journal of Communications,
           vol. 36, no. 5, Oct. 2025, pp. 572–89. EBSCOhost,
           https://doi.org/10.1080/10646175.2024.2396587.
+          
     Tyree and Smith in "An Analysis of Women Rappers’ Lyrical and Video Performances in Hip Hop Collaborations", examines how women rappers are represented through collaborations with other artists. They analyze song and music videos from 2015 to 2019 and found that while they can provide opportunities, it can also reinforce stereotypes, competition, and objectification. This relates to my dataset on collaborations because between pop and hip-hop/rap artists, including collaborations involving female rappers. Their research helps me understand how music collaborations can have cultural meanings beyond just the artists involved. Along with that, they selected songs using specific criteria which provides as an example for how scholars make decisions when building datasets.
 
 
