@@ -51,6 +51,16 @@
 
 These patterns come from only 10 songs and may change as the dataset grows.
 
+### How to use this dataset
+
+Open `data/tiktok_fragments.csv` in any spreadsheet program or with Python's `csv` module. Fields marked "my interpretation" reflect my own reading of each song and its TikTok use, and should not be treated as objective labels. Screenshots for each record are in `evidence/`, named by `item_id`. To add records or reproduce the summary above, run these commands from this folder:
+
+```bash
+pip install -r requirements.txt
+python tiktok_data_entry.py
+python analyze_dataset.py
+```
+
 ## 4. Audit and Connection Plan
 
 **Audit target:** The TikTok Billboard Top 50, a weekly U.S. chart "based on creations, video views and user engagement" (Billboard). Billboard discontinued it in March 2025 when its partnership with TikTok ended, so its weekly charts now survive mainly in archives such as the Wayback Machine.
@@ -68,7 +78,7 @@ So far, the CLI has made my data collection more consistent. It fills in each so
 
 Some parts of the process have been harder than I expected. TikTok's website has no way to search for sounds directly, so I had to use the mobile app to find each sound page. Choosing a single `tiktok_use` value was difficult when the top videos used a sound in different ways, which is why "Misty" ended up as `unclear`. Because the TikTok Billboard Top 50 was discontinued in March 2025, I also have to rely on Wikipedia and archived pages for chart information. My TikTok feed is personalized and U.S.-based, so the top videos I see may not match what other users see.
 
-As I continue, I may add a field for censored or renamed sound titles, since TikTok changed the names of two of my first ten songs. I may also split `meaning_shift` into more specific categories if `shifted` ends up covering too many different cases.
+I do not think the project needs to change direction, but some fields may change. As I continue, I may add a field for censored or renamed sound titles, since TikTok changed the names of two of my first ten songs. I may also split `meaning_shift` into more specific categories if `shifted` ends up covering too many different cases.
 
 I would like feedback on two questions. First, is one row per song the right unit, or should I record several videos for each song? Second, are the 15 songs from TikTok's year-end lists a fair comparison set, given that most of those lists cover the UK or the world rather than the U.S.?
 
