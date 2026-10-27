@@ -127,7 +127,14 @@ for song in songs:
         song_section = ask_choice("Song section: ", SECTION_CHOICES)
 
         console.print("\n[bold]Your interpretation[/bold]")
-        original_theme = input("Theme of the full song: ").strip()
+        suggestion = song.get("suggested_theme", "")
+        if suggestion != "":
+            console.print(f"  [dim]AI suggestion (check it against the lyrics): {suggestion}[/dim]")
+            original_theme = input("Theme of the full song (press Enter to accept the suggestion): ").strip()
+            if original_theme == "":
+                original_theme = suggestion
+        else:
+            original_theme = input("Theme of the full song: ").strip()
         tiktok_use = ask_choice("Main TikTok use: ", USE_CHOICES)
         meaning_shift = ask_choice("Meaning shift: ", SHIFT_CHOICES)
         interpretation_note = input("Why did you decide this? (1-2 sentences): ").strip()
