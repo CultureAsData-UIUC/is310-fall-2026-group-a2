@@ -7,8 +7,9 @@ from rich.table import Table
 
 console = Console()
 
+song_list_path = Path("data/song_list.csv")
 file_path = Path("data/tiktok_fragments.csv")
-file_path.parent.mkdir(exist_ok=True)
+excluded_path = Path("data/excluded_songs.csv")
 
 HEADER = [
     "item_id",
@@ -16,13 +17,11 @@ HEADER = [
     "artist",
     "release_year",
     "chart_peak",
-    "chart_weeks",
     "tiktok_sound_name",
     "sound_version",
     "platform_genre",
     "viral_lyrics",
     "song_section",
-    "snippet_length_sec",
     "original_theme",
     "tiktok_use",
     "meaning_shift",
@@ -47,51 +46,78 @@ def ask_choice(question, choices):
     return answer
 
 
+songs = []
+with open(song_list_path, "r", encoding="utf-8") as f:
+    for row in csv.DictReader(f):
+        songs.append(row)
+
+done_ids = []
+if file_path.exists():
+    with open(file_path, "r", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            done_ids.append(row["item_id"])
+if excluded_path.exists():
+    with open(excluded_path, "r", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            done_ids.append(row["item_id"])
+
 console.print("TikTok Song Fragment Dataset", style="bold cyan")
 
 guide = Table(title="What to enter for each song")
 guide.add_column("Field", style="magenta")
 guide.add_column("What it records")
 guide.add_column("Example", style="green")
-guide.add_row("song_title / artist", "The song as released", "Song Name / Artist Name")
-guide.add_row("chart_peak / chart_weeks", "Best rank and weeks on the TikTok Billboard Top 50", "7 / 12  (or 'none')")
 guide.add_row("tiktok_sound_name", "The sound's name as TikTok shows it", "Song Name (Sped Up)")
 guide.add_row("sound_version", "Which version of the song went viral", "sped up")
 guide.add_row("platform_genre", "Genre label a platform gives the song (say which platform)", "pop (Apple Music)")
-guide.add_row("viral_lyrics", "The lyrics heard in the TikTok sound", "first line ... last line")
+guide.add_row("viral_lyrics", "The lyrics heard in the TikTok sound", "first words ... last words")
 guide.add_row("song_section", "Where that part sits in the full song", "bridge")
 guide.add_row("original_theme", "What the full song is about (your reading)", "breakup, regret")
 guide.add_row("tiktok_use", "How most top videos use the sound", "transition")
 guide.add_row("meaning_shift", "Does TikTok use match the original meaning?", "shifted")
 console.print(guide)
 
-existing_count = 0
-if file_path.exists():
-    with open(file_path, "r", encoding="utf-8") as f:
-        existing_count = len(list(csv.reader(f))) - 1
-console.print(f"\nRecords already saved: [bold]{existing_count}[/bold]")
+console.print(f"\nSongs finished or skipped: [bold]{len(done_ids)}[/bold] of {len(songs)}")
 
 saved_count = 0
+skipped_count = 0
 
-more = "yes"
-while more in ("yes", "y"):
-    item_id = existing_count + saved_count + 1
-    console.print(f"\n[bold cyan]--- Record {item_id} ---[/bold cyan]")
+for song in songs:
+    if song["item_id"] in done_ids:
+        continue
+
+    item_id = int(song["item_id"])
+    console.print(f"\n[bold cyan]--- #{item_id}: {song['song_title']} ({song['artist']}) ---[/bold cyan]")
+
+    action = input("Enter this song now? (yes / skip / quit): ").strip().lower()
+    while action not in ("yes", "y", "skip", "quit"):
+        console.print("  Please type yes, skip, or quit.", style="red")
+        action = input("Enter this song now? (yes / skip / quit): ").strip().lower()
+
+    if action == "quit":
+        break
+
+    if action == "skip":
+        reason = input("Why are you skipping it? (e.g. no TikTok sound page found): ").strip()
+        is_new_file = not excluded_path.exists()
+        with open(excluded_path, "a", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            if is_new_file:
+                writer.writerow(["item_id", "song_title", "artist", "reason", "date_checked"])
+            writer.writerow([item_id, song["song_title"], song["artist"], reason, date.today().isoformat()])
+        skipped_count = skipped_count + 1
+        console.print("Skipped and recorded in excluded_songs.csv.", style="yellow")
+        continue
 
     answer = "no"
     while answer not in ("yes", "y"):
-
-        song_title = input("Song title: ").strip()
-        while song_title == "":
-            console.print("  Song title can't be empty.", style="red")
-            song_title = input("Song title: ").strip()
-
-        artist = input("Artist: ").strip()
         release_year = input("Release year: ").strip()
 
-        console.print("\n[bold]How institutions and platforms organize it[/bold]")
-        chart_peak = input("Peak on TikTok Billboard Top 50 (number, or 'none'): ").strip()
-        chart_weeks = input("Weeks on that chart (number, or 'none'): ").strip()
+        chart_peak = song["chart_peak"]
+        if chart_peak == "":
+            chart_peak = input("Peak on TikTok Billboard Top 50 (number, or 'none'): ").strip()
+
+        console.print("\n[bold]How TikTok and platforms organize it[/bold]")
         tiktok_sound_name = input("TikTok sound name, exactly as shown: ").strip()
         sound_version = ask_choice("Sound version: ", VERSION_CHOICES)
         platform_genre = input("Platform genre label, e.g. 'pop (Apple Music)': ").strip()
@@ -99,7 +125,6 @@ while more in ("yes", "y"):
         console.print("\n[bold]What actually circulates on TikTok[/bold]")
         viral_lyrics = input("Lyrics in the viral snippet (type 'none' if instrumental): ").strip()
         song_section = ask_choice("Song section: ", SECTION_CHOICES)
-        snippet_length_sec = input("Snippet length in seconds: ").strip()
 
         console.print("\n[bold]Your interpretation[/bold]")
         original_theme = input("Theme of the full song: ").strip()
@@ -112,30 +137,27 @@ while more in ("yes", "y"):
         evidence_file = input(f"Evidence file name (press Enter for {default_evidence}): ").strip()
         if evidence_file == "":
             evidence_file = default_evidence
-        date_accessed = date.today().isoformat()
 
         record = {
             "item_id": item_id,
-            "song_title": song_title,
-            "artist": artist,
+            "song_title": song["song_title"],
+            "artist": song["artist"],
             "release_year": release_year,
             "chart_peak": chart_peak,
-            "chart_weeks": chart_weeks,
             "tiktok_sound_name": tiktok_sound_name,
             "sound_version": sound_version,
             "platform_genre": platform_genre,
             "viral_lyrics": viral_lyrics,
             "song_section": song_section,
-            "snippet_length_sec": snippet_length_sec,
             "original_theme": original_theme,
             "tiktok_use": tiktok_use,
             "meaning_shift": meaning_shift,
             "interpretation_note": interpretation_note,
             "evidence_file": evidence_file,
-            "date_accessed": date_accessed,
+            "date_accessed": date.today().isoformat(),
         }
 
-        review = Table(title=f"Record {item_id}")
+        review = Table(title=f"Record #{item_id}")
         review.add_column("Field", style="magenta")
         review.add_column("Value", style="yellow")
         for field in HEADER:
@@ -143,8 +165,11 @@ while more in ("yes", "y"):
         console.print(review)
 
         answer = input("Is this correct? (yes/no): ").strip().lower()
-        if answer not in ("yes", "y"):
-            console.print("Okay, let's enter this record again.\n", style="red")
+        while answer not in ("yes", "y", "no", "n"):
+            console.print("  Please type yes or no.", style="red")
+            answer = input("Is this correct? (yes/no): ").strip().lower()
+        if answer in ("no", "n"):
+            console.print("Okay, let's enter this song again.\n", style="red")
 
     is_new_file = not file_path.exists()
     with open(file_path, "a", newline="", encoding="utf-8") as f:
@@ -156,8 +181,6 @@ while more in ("yes", "y"):
     saved_count = saved_count + 1
     console.print("Saved!", style="green")
 
-    more = input("\nAdd another song? (yes/no): ").strip().lower()
-
-console.print(f"\n[bold green]{saved_count} record(s) saved this session.[/bold green]")
-console.print(f"Total records in the file: {existing_count + saved_count}")
+console.print(f"\n[bold green]{saved_count} song(s) saved and {skipped_count} skipped this session.[/bold green]")
+console.print(f"Songs finished or skipped in total: {len(done_ids) + saved_count + skipped_count} of {len(songs)}")
 console.print(f"File location: {file_path.resolve()}")
