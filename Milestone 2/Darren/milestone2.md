@@ -6,7 +6,7 @@
 
 `data/tiktok_fragments.csv` records 50 songs and the fragment of each that circulated on TikTok. Each row is one song.
 
-- **Current size:** TODO of 50 records. Remaining songs will be collected by TODO date.
+- **Current size:**  of 50 records. Remaining songs will be collected by November 1.
 - **Included:** (1) All 35 songs that reached No. 1 on the TikTok Billboard Top 50 (September 2023 to March 2025). (2) 15 songs that TikTok named in its own year-end lists (2023 to 2025) but that never reached No. 1 on Billboard's chart. Full list and sources: `songs_to_collect.md`.
 - **Excluded:** Songs whose TikTok sound page could not be found, was removed, or was region-locked.
 
@@ -52,12 +52,6 @@
 **Connection:** The chart counts whole songs; my dataset records the fragments that actually circulate. Joining them on `song_title` and `artist` shows which fragments, versions, and uses the ranking leaves out.
 
 ## 5. Reflection
-
-TODO (in my own words):
-- What is working:
-- What is not working:
-- What might change:
-- What feedback I need:
 
 ## 6. Scholarly Sources
 
