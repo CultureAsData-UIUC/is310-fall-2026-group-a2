@@ -1,10 +1,13 @@
-# TikTok Song Fragments by Darren Jin
+# TikTok Song Fragments
+
+**Author:** Darren Jin
 
 ## 1. Custom Dataset
-`data/tiktok_fragments.csv` records songs from the TikTok Billboard Top 50 and the fragment of each song that circulated on TikTok. Each row is one song and its viral fragment.
 
-- **Current size:** 0 records. 
-- **Included:** Songs on the TikTok Billboard Top 50 (U.S.) between  and , plus a few widely used sounds that never charted (`chart_peak = none`).
+`data/tiktok_fragments.csv` records 50 songs and the fragment of each that circulated on TikTok. Each row is one song.
+
+- **Current size:** TODO of 50 records. Remaining songs will be collected by TODO date.
+- **Included:** (1) All 35 songs that reached No. 1 on the TikTok Billboard Top 50 (September 2023 to March 2025). (2) 15 songs that TikTok named in its own year-end lists (2023 to 2025) but that never reached No. 1 on Billboard's chart. Full list and sources: `songs_to_collect.md`.
 - **Excluded:** Songs whose TikTok sound page could not be found, was removed, or was region-locked.
 
 ### Fields
@@ -13,11 +16,11 @@
 |---|---|
 | `item_id` | Record number (automatic) |
 | `song_title`, `artist`, `release_year` | Song as released |
-| `chart_peak`, `chart_weeks` | Best rank and weeks on the TikTok Billboard Top 50, or `none` |
+| `chart_peak` | Best rank on the TikTok Billboard Top 50, or `none` |
 | `tiktok_sound_name` | Sound name as TikTok shows it |
 | `sound_version` | `original`, `sped up`, `slowed`, `remix`, `live`, `user upload`, `other` |
 | `platform_genre` | Genre label with its platform, e.g. `pop (Apple Music)` |
-| `viral_lyrics`, `snippet_length_sec` | Lyrics and length of the TikTok sound |
+| `viral_lyrics` | Lyrics heard in the TikTok sound |
 | `song_section` | `intro`, `verse`, `pre-chorus`, `chorus`, `post-chorus`, `bridge`, `outro`, `instrumental`, `multiple`, `unknown` |
 | `original_theme` | What the full song is about (my interpretation) |
 | `tiktok_use` | `dance`, `lip-sync`, `meme`, `storytime`, `transition`, `aesthetic`, `emotional`, `other` (my interpretation) |
@@ -25,11 +28,11 @@
 | `interpretation_note` | Reason for my interpretation |
 | `evidence_file`, `date_accessed` | Screenshot path and date checked |
 
-**`meaning_shift` categories:** **aligned** = TikTok use matches the song's meaning; **shifted** = same mood, unrelated situation; **inverted** = use contradicts the meaning; **unclear** = top videos vary too much.
+**`meaning_shift`:** **aligned** = TikTok use matches the song's meaning; **shifted** = same mood, unrelated situation; **inverted** = use contradicts the meaning; **unclear** = top videos vary too much.
 
 ## 2. Two Transformations
 
-1. **Cultural material → working representation:** I open each song's TikTok sound page and top videos, save a screenshot to `evidence/`, transcribe the fragment's lyrics, and find where it occurs in the full song.
+1. **Cultural material → working representation:** I open each song's TikTok sound page and top videos, save a screenshot to `evidence/`, transcribe the fragment's lyrics, and find where it occurs in the full song using its lyrics on Genius.
 2. **Working representation → structured data:** I enter each song with `tiktok_data_entry.py`, assigning the fields and categories above.
 
 ## 3. Computational Process
@@ -39,16 +42,22 @@
 
 ## 4. Audit and Connection Plan
 
-**Audit target:** The TikTok Billboard Top 50, a weekly U.S. chart launched in September 2023 that ranks songs by TikTok activity.
+**Audit target:** The TikTok Billboard Top 50, a weekly U.S. chart "based on creations, video views and user engagement" (Billboard). Billboard discontinued it in March 2025 when its partnership with TikTok ended, so its weekly charts now survive mainly in archives such as the Wayback Machine.
 
 **What I will investigate:**
-1. What the chart counts, and whether sped-up versions and user uploads are merged into the original song.
-2. Collect chart entries for my period with Python and verify a sample on billboard.com.
-3. Join the chart to my dataset on `song_title` and `artist` to see which fragments, versions, and uses the chart's song-level ranking leaves out.
+1. Collect archived weekly chart pages from the Wayback Machine with Python and verify entries against Billboard articles.
+2. Whether the chart merges sped-up versions and user uploads into the original song.
+3. How Billboard's chart and TikTok's own year-end lists rank the same period differently.
 
-**Connection:** The chart counts whole songs; my dataset records the fragments that actually circulate. Comparing them shows what the ranking erases.
+**Connection:** The chart counts whole songs; my dataset records the fragments that actually circulate. Joining them on `song_title` and `artist` shows which fragments, versions, and uses the ranking leaves out.
 
 ## 5. Reflection
+
+TODO (in my own words):
+- What is working:
+- What is not working:
+- What might change:
+- What feedback I need:
 
 ## 6. Scholarly Sources
 
