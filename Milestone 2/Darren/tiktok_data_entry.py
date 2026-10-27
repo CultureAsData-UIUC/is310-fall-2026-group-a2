@@ -18,13 +18,11 @@ HEADER = [
     "artist",
     "release_year",
     "chart_peak",
-    "chart_weeks",
     "tiktok_sound_name",
     "sound_version",
     "platform_genre",
     "viral_lyrics",
     "song_section",
-    "snippet_length_sec",
     "original_theme",
     "tiktok_use",
     "meaning_shift",
@@ -58,7 +56,7 @@ guide.add_column("Field", style="magenta")
 guide.add_column("What it records")
 guide.add_column("Example", style="green")
 guide.add_row("song_title / artist", "The song as released", "Song Name / Artist Name")
-guide.add_row("chart_peak / chart_weeks", "Best rank and weeks on the TikTok Billboard Top 50", "7 / 12  (or 'none')")
+guide.add_row("chart_peak", "Best rank on the TikTok Billboard Top 50", "7  (or 'none')")
 guide.add_row("tiktok_sound_name", "The sound's name as TikTok shows it", "Song Name (Sped Up)")
 guide.add_row("sound_version", "Which version of the song went viral", "sped up")
 guide.add_row("platform_genre", "Genre label a platform gives the song (say which platform)", "pop (Apple Music)")
@@ -99,7 +97,6 @@ while more in ("yes", "y"):
 
         console.print("\n[bold]How institutions and platforms organize it[/bold]")
         chart_peak = input("Peak on TikTok Billboard Top 50 (number, or 'none'): ").strip()
-        chart_weeks = input("Weeks on that chart (number, or 'none'): ").strip()
         tiktok_sound_name = input("TikTok sound name, exactly as shown: ").strip()
         sound_version = ask_choice("Sound version: ", VERSION_CHOICES)
         platform_genre = input("Platform genre label, e.g. 'pop (Apple Music)': ").strip()
@@ -107,7 +104,6 @@ while more in ("yes", "y"):
         console.print("\n[bold]What actually circulates on TikTok[/bold]")
         viral_lyrics = input("Lyrics in the viral snippet (type 'none' if instrumental): ").strip()
         song_section = ask_choice("Song section: ", SECTION_CHOICES)
-        snippet_length_sec = input("Snippet length in seconds: ").strip()
 
         console.print("\n[bold]Your interpretation[/bold]")
         original_theme = input("Theme of the full song: ").strip()
@@ -129,13 +125,11 @@ while more in ("yes", "y"):
             "artist": artist,
             "release_year": release_year,
             "chart_peak": chart_peak,
-            "chart_weeks": chart_weeks,
             "tiktok_sound_name": tiktok_sound_name,
             "sound_version": sound_version,
             "platform_genre": platform_genre,
             "viral_lyrics": viral_lyrics,
             "song_section": song_section,
-            "snippet_length_sec": snippet_length_sec,
             "original_theme": original_theme,
             "tiktok_use": tiktok_use,
             "meaning_shift": meaning_shift,
@@ -153,7 +147,10 @@ while more in ("yes", "y"):
         console.print(review)
 
         answer = input("Is this correct? (yes/no): ").strip().lower()
-        if answer not in ("yes", "y"):
+        while answer not in ("yes", "y", "no", "n"):
+            console.print("  Please type yes or no.", style="red")
+            answer = input("Is this correct? (yes/no): ").strip().lower()
+        if answer in ("no", "n"):
             console.print("Okay, let's enter this record again.\n", style="red")
 
     # 4. Save only after confirmation. Write the header once, when the file is new.
