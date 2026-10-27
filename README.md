@@ -23,6 +23,12 @@ Throughout this semester, Group A2 investigates how musical expression, recorded
 
 ---
 
+## Individual Milestone 2 Work
+
+| Contributor | Deliverables |
+| :--- | :--- |
+| Min Kim | [Initial Spotify chart dataset, documentation, and audit plan](./Milestone%202/Min/README.md) |
+
 ## Team Members & Responsibilities
 
 | Name | Role / Area of Contribution | GitHub Handle |
