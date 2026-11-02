@@ -6,10 +6,10 @@
 
 `data/tiktok_fragments.csv` records 50 songs and the fragment of each that circulated on TikTok. Each row is one song.
 
-- **Current size:** 46 of 50 songs recorded. The other 4 were skipped because no TikTok sound page could be found (see `data/excluded_songs.csv`).
-- **Included:** (1) All 35 songs that reached No. 1 on the TikTok Billboard Top 50 (September 2023 to March 2025). (2) 15 songs that TikTok named in its own year-end lists (2023 to 2025) but that never reached No. 1 on Billboard's chart. Full list and sources: `songs_to_collect.md`.
-- **Excluded:** Songs whose TikTok sound page could not be found, was removed, or was region-locked. Skipped songs and the reason for each are recorded in `data/excluded_songs.csv`.
-- **Source note:** The No. 1 list comes from Wikipedia, a secondary source, and will be verified against archived Billboard chart pages.
+- 46 of 50 songs recorded. The other 4 were skipped because no TikTok sound page could be found. Excluded songs are in `data/excluded_songs.csv`.
+- (1) All 35 songs that reached No. 1 on the TikTok Billboard Top 50 (September 2023 to March 2025). (2) 15 songs that TikTok named in its own year-end lists (2023 to 2025) but that never reached No. 1 on Billboard's chart. Full list and sources: `songs_to_collect.md`.
+- Songs whose TikTok sound page could not be found, was removed, or was region-locked. Skipped songs and the reason for each are recorded in `data/excluded_songs.csv`.
+- The No. 1 list comes from Wikipedia, a secondary source, and will be verified against archived Billboard chart pages.
 
 ### Fields
 

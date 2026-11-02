@@ -28,6 +28,7 @@ Throughout this semester, Group A2 investigates how musical expression, recorded
 | Contributor | Deliverables |
 | :--- | :--- |
 | Min Kim | [Initial Spotify chart dataset, documentation, and audit plan](./Milestone%202/Min/README.md) |
+| Darren Jin | [TikTok song fragments dataset, documentation, and audit plan](./Milestone%202/Darren/milestone2.md) |
 
 ## Team Members & Responsibilities
 
