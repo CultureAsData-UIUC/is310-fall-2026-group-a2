@@ -6,7 +6,7 @@
 
 `data/tiktok_fragments.csv` records 50 songs and the fragment of each that circulated on TikTok. Each row is one song.
 
-- **Current size:**  10 of 50 records. Remaining songs will be collected by November 1.
+- **Current size:** 46 of 50 songs recorded. The other 4 were skipped because no TikTok sound page could be found (see `data/excluded_songs.csv`).
 - **Included:** (1) All 35 songs that reached No. 1 on the TikTok Billboard Top 50 (September 2023 to March 2025). (2) 15 songs that TikTok named in its own year-end lists (2023 to 2025) but that never reached No. 1 on Billboard's chart. Full list and sources: `songs_to_collect.md`.
 - **Excluded:** Songs whose TikTok sound page could not be found, was removed, or was region-locked. Skipped songs and the reason for each are recorded in `data/excluded_songs.csv`.
 - **Source note:** The No. 1 list comes from Wikipedia, a secondary source, and will be verified against archived Billboard chart pages.
@@ -41,15 +41,16 @@
 - `tiktok_data_entry.py`: Python command-line interface (Rich) that reads the 50-song list from `data/song_list.csv`, fills in each song's title, artist, and chart peak, limits category fields to fixed options, and saves each record to the CSV only after I confirm it. Skipped songs are logged with a reason.
 - `analyze_dataset.py`: Counts records by section, version, use, and meaning shift, compares song section with meaning shift, lists TikTok sound names that differ from the song title, and checks for missing values and evidence files.
 
-### Early patterns (first 10 records)
+### Early patterns (46 records)
 
-- **The viral fragment is not always the chorus.** Four fragments come from the chorus, four from the intro, and two from a verse.
-- **Intros shift meaning more often.** Three of the four chorus fragments are used in line with the song's meaning, while two of the four intro fragments are used in unrelated situations.
-- **Memes are the most common use** (4 of 10), ahead of dance (3 of 10). No song so far has been used in a way that inverts its meaning.
-- **TikTok renames some sounds.** "Wassup Gwayy" circulates as "Wussup Gway," and "Mr. Take Ya Bitch" as the censored "MR. TAKE YA B*TCH," so the platform's label differs from the released title.
-- Nine of ten sounds use the original recording; one ("Sky") circulates as a remix.
-
-These patterns come from only 10 songs and may change as the dataset grows.
+- **The viral fragment is not usually the chorus.** Only 16 of 46 fragments come from the chorus; 15 come from the intro, 13 from a verse, and 2 from an instrumental section.
+- **Chorus fragments keep their meaning more often than intros.** Half of the chorus fragments (8 of 16) are used in line with the song's meaning, compared with only 3 of 15 intro fragments.
+- **Older songs shift meaning more often.** Of the 15 songs released before 2020, 6 are used in unrelated situations (`shifted`), compared with 8 of the 31 newer songs.
+- **Meaning shifts are common but rarely reversed.** 18 songs are `aligned`, 14 `shifted`, 12 `unclear`, and only 2 ("Disco" and "Beautiful Things") `inverted`.
+- **`other` is the most common use** (14 of 46), ahead of dance (12) and meme (11). My use categories do not yet capture many of the ways sounds are used.
+- **TikTok renames some sounds.** Four sound names differ from the released title, including the censored "MR. TAKE YA B*TCH" and "Like a Prayer" without "(Choir Version)."
+- **Most sounds are the original recording** (41 of 46); 5 circulate as remixes.
+- **The chart outlasts the platform.** Four songs, including No. 1 song "Alibi," no longer had a findable TikTok sound page when I checked.
 
 ### How to use this dataset
 
@@ -76,9 +77,9 @@ python analyze_dataset.py
 
 So far, the CLI has made my data collection more consistent. It fills in each song's title, artist, and chart peak from my song list and limits the category fields to fixed options, so I can focus on what I see on TikTok instead of retyping the same information. Saving a screenshot for each song also gives me a fixed record, even if the sound page changes later. Using all 35 No. 1 songs as the core of the dataset gave me a selection rule that does not depend on my own taste.
 
-Some parts of the process have been harder than I expected. TikTok's website has no way to search for sounds directly, so I had to use the mobile app to find each sound page. Choosing a single `tiktok_use` value was difficult when the top videos used a sound in different ways, which is why "Misty" ended up as `unclear`. Because the TikTok Billboard Top 50 was discontinued in March 2025, I also have to rely on Wikipedia and archived pages for chart information. My TikTok feed is personalized and U.S.-based, so the top videos I see may not match what other users see.
+Some parts of the process have been harder than I expected. TikTok's website has no way to search for sounds directly, so I had to use the mobile app to find each sound page. Choosing a single `tiktok_use` value was difficult when the top videos used a sound in different ways, which is why 12 songs ended up as `unclear` and 14 used `other`. Because the TikTok Billboard Top 50 was discontinued in March 2025, I also have to rely on Wikipedia and archived pages for chart information. My TikTok feed is personalized and U.S.-based, so the top videos I see may not match what other users see.
 
-I do not think the project needs to change direction, but some fields may change. As I continue, I may add a field for censored or renamed sound titles, since TikTok changed the names of two of my first ten songs. I may also split `meaning_shift` into more specific categories if `shifted` ends up covering too many different cases.
+I do not think the project needs to change direction, but some fields may change. As I continue, I may add a field for censored or renamed sound titles, since TikTok changed the names of four songs. I may also split `meaning_shift` into more specific categories and add more `tiktok_use` options, since `other` became the most common value.
 
 I would like feedback on two questions. First, is one row per song the right unit, or should I record several videos for each song? Second, are the 15 songs from TikTok's year-end lists a fair comparison set, given that most of those lists cover the UK or the world rather than the U.S.?
 
