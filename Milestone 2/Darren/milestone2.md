@@ -81,7 +81,7 @@ Some parts of the process have been harder than I expected. TikTok's website has
 
 I do not think the project needs to change direction, but some fields may change. As I continue, I may add a field for censored or renamed sound titles, since TikTok changed the names of four songs. I may also split `meaning_shift` into more specific categories and add more `tiktok_use` options, since `other` became the most common value.
 
-I would like feedback on two questions. First, is one row per song the right unit, or should I record several videos for each song? Second, are the 15 songs from TikTok's year-end lists a fair comparison set, given that most of those lists cover the UK or the world rather than the U.S.?
+I would like feedback on two questions. First is one row per song the right unit, or should I record several videos for each song? Second, are the 15 songs from TikTok's year-end lists a fair comparison set, given that most of those lists cover the UK or the world rather than the U.S.?
 
 ## 6. Scholarly Sources
 

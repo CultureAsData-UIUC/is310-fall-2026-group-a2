@@ -1,1 +1,2 @@
 Fianna: Revised the Mass Digitization folder to instead count as the Group A2 folder, created the group-work-log.md
+Darren: 
