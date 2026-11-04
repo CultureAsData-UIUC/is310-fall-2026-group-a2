@@ -1,7 +1,4 @@
-# TikTok Song Fragments
-
-**Author:** Darren Jin
-
+# TikTok Song Fragments by Darren Jin
 ## 1. Custom Dataset
 
 `data/tiktok_fragments.csv` records 50 songs and the fragment of each that circulated on TikTok. Each row is one song.
